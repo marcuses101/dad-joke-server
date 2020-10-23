@@ -136,8 +136,6 @@ async function getSubjectJokeWithArt(subject) {
   return { joke, entities, images };
 }
 
-getRandomJokeWithArt().catch((e) => console.log(e));
-
 module.exports = {
   getRandomJokeWithArt,
   getSubjectJokeWithArt,
