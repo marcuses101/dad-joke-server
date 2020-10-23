@@ -53,7 +53,6 @@ const getJokeBySubjectTotalPages = memo(async function (subject) {
   });
   if (!response.ok) throw new Error(response.status);
   const data = await response.json();
-  debugger
   if (!data.total_jokes) throw new Error(404)
   return data.total_jokes;
 });
