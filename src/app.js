@@ -12,8 +12,10 @@ const app = express();
 
 const morganOption = NODE_ENV === "production" ? "tiny" : "dev";
 
+
 app.use(morgan(morganOption));
 app.use(helmet());
+app.use(cors());
 app.use(expressSanitizer());
 
 app.get("/", (req, res) => {
