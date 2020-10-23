@@ -1,5 +1,0 @@
-GET http://localhost:8000/random HTTP/1.1
-
-###
-
-GET http://localhost:8000/search?subject=dog HTTP/1.1
