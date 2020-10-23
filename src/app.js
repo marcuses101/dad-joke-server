@@ -16,6 +16,10 @@ app.use(morgan(morganOption));
 app.use(helmet());
 app.use(expressSanitizer());
 
+app.get("/", (req, res) => {
+  res.send("Hello, world!");
+});
+
 app.use((req,res,next)=>{
   if(!req.query.key || req.query.key !== DAD_API) {
     return res.status(401).json({error: 'Unauthorized request'})
@@ -50,9 +54,6 @@ app.get("/search", async (req, res, next) => {
   }
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello, world!");
-});
 
 app.use((error, req, res, next) => {
   let response;
